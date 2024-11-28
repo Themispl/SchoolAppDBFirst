@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using SchoolApp.Data;
+
 namespace SchoolApp
 {
     public class Program
@@ -5,6 +8,9 @@ namespace SchoolApp
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            var connstring = builder.Configuration.GetConnectionString("DefaultConnection");
+            builder.Services.AddDbContext<Student6DbContext>(options => options.UseSqlServer(connstring));
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();

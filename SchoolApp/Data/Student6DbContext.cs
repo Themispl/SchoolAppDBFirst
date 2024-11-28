@@ -132,8 +132,9 @@ public partial class Student6DbContext : DbContext
                 .HasMaxLength(10)
                 .IsFixedLength();
             entity.Property(e => e.UserRole)
-                .HasMaxLength(20)
-                .IsFixedLength();
+                .HasConversion<string>()
+                .HasMaxLength(20);
+                
             entity.Property(e => e.Username)
                 .HasMaxLength(50)
                 .IsFixedLength();

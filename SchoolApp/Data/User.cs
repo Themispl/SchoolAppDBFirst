@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SchoolApp.Core.Enums;
+using System;
 using System.Collections.Generic;
 
 namespace SchoolApp.Data;
@@ -17,5 +18,6 @@ public partial class User
 
     public string Lastname { get; set; } = null!;
 
-    public string UserRole { get; set; } = null!;
+    public UserRole? UserRole { get; set; } = null!;
+    public virtual Teacher? Teacher { get; set; }
 }
