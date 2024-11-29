@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using SchoolApp.Data;
+using SchoolApp.Repositories;
 
 namespace SchoolApp
 {
@@ -14,6 +15,9 @@ namespace SchoolApp
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddRepositories();
+
+           // builder.Services
 
             var app = builder.Build();
 

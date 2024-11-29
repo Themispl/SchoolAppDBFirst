@@ -20,4 +20,5 @@ public partial class User
 
     public UserRole? UserRole { get; set; } = null!;
     public virtual Teacher? Teacher { get; set; }
+    public virtual Student? Student { get; set; }
 }
